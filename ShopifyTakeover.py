@@ -75,22 +75,22 @@ def shopify_take(probed_domain):
                 if vuln_only:
                     return probed_domain
                 else:
-                    return(f"{color.bold}{probed_domain}{color.reset} --> {color.bold}{color.green}Vuln{color.reset}")
+                    return(f"[{color.bold}{color.green}vuln{color.reset}] {probed_domain}")
             else:
                 if vuln_only:
                     pass
                 else:
-                    return(f"{probed_domain} --> {color.bold}{color.orange}Not Vuln{color.reset}")
+                    return(f"[{color.red}erro{color.reset}] {probed_domain}")
         else:
             if vuln_only:
                 pass
             else:
-                return(f"{probed_domain} --> {color.bold}{color.orange}Not Vuln{color.reset}")
+                return(f"[{color.red}erro{color.reset}] {probed_domain}")
     except RequestException as err:
         if vuln_only:
             pass
         else:
-            return(f"{probed_domain} --> {color.bold}{color.red}{type(err).__name__}{color.reset}")
+            return(f"[{color.red}erro{color.reset}] {probed_domain} {color.bold}{color.red}{type(err).__name__}{color.reset}")
 def shopify_tko():
         with ThreadPoolExecutor(max_workers=worker) as executor:
             with codecs.open(domainlist, encoding="utf-8", errors="strict") as tglist:

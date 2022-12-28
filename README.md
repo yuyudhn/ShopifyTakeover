@@ -31,4 +31,4 @@ Print vuln only.
 python3 ShopifyTakeover.py -l shop.txt -t 40 --vuln
 ```
 ## Screenshot
-![ShopifyTakeover](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgif8q9LaPDXKDlqUaoUk9VbAHnKKL9-N9AGJFwG-rOkUIeYR5MJL5IiBmtud9EW7RU-dqd1GxveRzZ1F9l-I2GBH8L3fd6YT9Ai0MH3JPZ96bTj1nsvPEWfbVB_4723svfNigk9eLCzT3EkSmbl0-7uRWwBMr205CANQ0ozjeCYZ2zexhv0BuVRPjFNQ/s884/shopifytakeover.png "ShopifyTakeover")
+![ShopifyTakeover](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj2yfEMjGZS8pTuC6zN-bG8RpjBfM9V0BPARz9vF6gWxvJlkylQPhSFtl-4eeZGy9TuK0zrQlHh98w92HOxRsa1atSKc9-aQqdhmTJ5_KVqHmBQww7RNpgnwQP3arqjy-Cdr-P-GGhd5v1P_kdkXbruMnGqOAESuTieXafxJScWqMJGOvR7X8SBcGIrtg/s759/shopifytakeover.png "ShopifyTakeover")
