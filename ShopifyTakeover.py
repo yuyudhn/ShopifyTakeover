@@ -8,6 +8,7 @@ import requests
 from requests import RequestException
 from bs4 import BeautifulSoup as bsop
 import sys
+import re
 
 urllib3.disable_warnings()
 
@@ -96,12 +97,19 @@ def shopify_tko():
             with codecs.open(domainlist, encoding="utf-8", errors="strict") as tglist:
                 domainname = tglist.read().splitlines()
                 loopcheck = [executor.submit(shopify_take, probed) for probed in domainname]
-                try:     
+                try:
+                    vuln_counter = 0
                     for future in as_completed(loopcheck):
+                        if not vuln_only:
+                            if "vuln" and not "erro" in future.result():
+                                vuln_counter += 1
                         if future.result():
                             print(future.result())
+                            if vuln_only:
+                                vuln_counter += 1
                         else:
                             pass
+                    print(f"\nFound {color.bold}{vuln_counter}{color.reset} domain vulnerable to Shopify Subdomain Takeover.")
                 except KeyboardInterrupt as err:
                     executor.shutdown(wait=False, cancel_futures=True)
                     print(f"\n{color.bold}Terminate program. Please wait for current task pool finished...{color.reset}")
