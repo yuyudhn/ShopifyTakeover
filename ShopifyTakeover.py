@@ -71,7 +71,7 @@ def shopify_take(probed_domain):
         domaincheck = req_format(probed_domain)
         if domaincheck.status_code == 404:           
             vuln_parse = bsop(domaincheck.text, "html.parser")
-            vuln_check = vuln_parse.find_all(text="Sorry, this shop is currently unavailable.")
+            vuln_check = vuln_parse.find_all(string="Sorry, this store is currently unavailable.")
             if vuln_check:
                 if vuln_only:
                     return probed_domain
